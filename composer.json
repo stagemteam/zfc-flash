@@ -1,0 +1,33 @@
+{
+  "name": "stagem/zfc-flash",
+  "description": "ZF Adapters for different Flash Managers",
+  "type": "zf-module",
+  "license": "MIT",
+  "keywords": [
+    "zf2",
+    "zf3",
+    "zf-expressive",
+    "flash manager"
+  ],
+  "authors": [
+    {
+      "name": "Serhii Popov",
+      "email": "popow.serhii@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "slim/flash": "^0.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Stagem\\ZfcFlash\\": "src/"
+    }
+  },
+  "extra": {
+    "zf": {
+      "config-provider": "Stagem\\ZfcFlash\\ConfigProvider"
+    }
+  }
+}
