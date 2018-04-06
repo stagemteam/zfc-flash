@@ -4,10 +4,9 @@
   "type": "zf-module",
   "license": "MIT",
   "keywords": [
-    "zf2",
     "zf3",
     "zf-expressive",
-    "flash manager"
+    "flash"
   ],
   "authors": [
     {
