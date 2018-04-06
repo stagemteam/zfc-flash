@@ -1,10 +1,10 @@
-# Zfc-Flash
+# Zfc Flash
 ZF Adapters for different Flash Managers
 
 There are many FLash Messages implementation and all of them have different interfaces.
 This plugin provide one `FlashInterface` which allow write custom `Adapter` for any Flash library.
 
-By default this package uses [`slim/flash`](https://github.com/slimphp/Slim-Flash)
+By default this package uses [`slim/flash`](https://github.com/slimphp/Slim-Flash).
 
 Package has several registered namespace which allow group massages and show beauty html markup for all of them.
 - default
@@ -14,18 +14,18 @@ Package has several registered namespace which allow group massages and show bea
 - info
 
 ## Installation
-```php
+```
 composer require stagem/zfc-flash
 ```
 
 **In Expressive**
 
-You should add `FlashMiddleware` to `config/pipeline.php` 
-and register module in `config/config.php` as `\Stagem\ZfcFlash\ConfigProvider::class,`
-This allow gets flash object from request as `$flash = $request->getAttribute('flash');` 
+You should enable module in `config/config.php` as `Stagem\ZfcFlash\ConfigProvider::class` 
+and register middleware in`config/pipeline.php`
 ```php
 $app->pipe(\Stagem\ZfcFlash\FlashMiddleware::class);
 ```
+This allow gets flash object from request as `$flash = $request->getAttribute('flash');` 
 
 ## Usage
 **In Expressive**
