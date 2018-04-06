@@ -1,0 +1,29 @@
+<?php /** @var $flash \Zend\View\Helper\FlashMessenger */ ?>
+<?php $flash = $this->flashMessenger(); ?>
+<?php ob_start(); ?>
+<?php
+echo nl2br($flash->renderCurrent('error', ['alert', 'alert-dismissible', 'alert-danger'], false));
+echo nl2br($flash->renderCurrent('debug', ['alert', 'alert-dismissible', 'alert-warning'], false));
+echo nl2br($flash->renderCurrent('info', ['alert', 'alert-dismissible', 'alert-info'], false));
+echo nl2br($flash->renderCurrent('warning', ['alert', 'alert-dismissible', 'alert-warning'], false));
+echo nl2br($flash->renderCurrent('default', ['alert', 'alert-dismissible', 'alert-warning'], false));
+echo nl2br($flash->renderCurrent('success', ['alert', 'alert-dismissible', 'alert-success'], false));
+
+$flash->clearCurrentMessagesFromContainer();
+
+echo nl2br($flash->render('error', ['alert', 'alert-dismissible', 'alert-danger'], false));
+echo nl2br($flash->render('debug', ['alert', 'alert-dismissible', 'alert-warning'], false));
+echo nl2br($flash->render('info', ['alert', 'alert-dismissible', 'alert-info'], false));
+echo nl2br($flash->render('warning', ['alert', 'alert-dismissible', 'alert-warning'], false));
+echo nl2br($flash->render('default', ['alert', 'alert-dismissible', 'alert-warning'], false));
+echo nl2br($flash->render('success', ['alert', 'alert-dismissible', 'alert-success'], false));
+?>
+<?php $messages = trim(ob_get_clean()); ?>
+
+<?php if ($messages) : ?>
+	<div class="row-fluid">
+		<div class="col-md-12">
+            <?= $messages ?>
+		</div>
+	</div>
+<?php endif; ?>
