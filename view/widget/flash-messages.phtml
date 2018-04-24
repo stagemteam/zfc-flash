@@ -21,7 +21,7 @@ echo nl2br($flash->render('success', ['alert', 'alert-dismissible', 'alert-succe
 <?php $messages = trim(ob_get_clean()); ?>
 
 <?php if ($messages) : ?>
-	<div class="row-fluid">
+	<div class="row">
 		<div class="col-md-12">
             <?= $messages ?>
 		</div>
